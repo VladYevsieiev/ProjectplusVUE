@@ -1,0 +1,509 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+.background-container {
+    height: 800px;
+    background-image: url('img/pexels-pixabay-209831.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.logo {
+
+}
+
+
+header {
+    background-color: #00264D;
+}
+
+.new-nav {
+    height: 100px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #00264D;
+    margin-right: 650px;
+}
+.items-center {
+    align-items: center;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.flex {
+    display: flex;
+}
+
+.nav-links {
+    width: 615px;
+
+}
+.justify-between {
+    justify-content: space-between;
+
+
+}
+.flex {
+    display: flex;
+}
+
+.nav_link {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+
+
+}
+
+.button-link {
+    width: 70px;
+    height: 30px;
+    color: #F5F4F4;
+    background-color: black;
+    text-decoration: none;
+    border-radius: 10px;
+
+
+}
+.items-center {
+    text-align: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.nav_link:hover {
+    color: #fff;
+    background: #f49212;
+    border-radius: 100px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+
+
+* {box-sizing: border-box;}
+form {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+    margin-right: 700px;
+}
+input, button {
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+input {
+    width: 100%;
+    height: 42px;
+    background: #F9F0DA;
+    padding-left: 15px;
+}
+button {
+    height: 26px;
+    width: 26px;
+    top: 1px;
+    right: 15px;
+    cursor: pointer;
+
+}
+
+.absolute-button { 
+    position: absolute;
+}
+
+.degree button{
+
+}
+
+.weather-design {
+    max-width: 1000px;
+    margin: 0px auto 0;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    background-image: url("img/sky2.jpg");
+    background-size: cover;
+
+}
+
+.location-name {
+    text-align: center;
+    padding: 16px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 24px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.current-weather {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+
+
+}
+
+.main_left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.main_left i {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.main_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+.main_right span {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.prediction {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color:  rgba(255, 255, 255, 0.0);
+}
+
+
+.prediction .day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 18%;
+    background-color: #e0e0e0;
+    background-image: url("img/sky.jpg");
+    background-size: cover;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0 2px;
+}
+
+.prediction:hover {
+    transform: scale(1.008);
+}
+
+
+.prediction .day .name {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.prediction .day i {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.prediction .day .temperature {
+    font-size: 16px;
+   font-weight: bold;
+
+}
+
+
+
+
+.partly_cloudy {
+    width: 120px;
+    height: 120px;
+}
+.partly_cloudy:before {
+    content: url('img/weather-icons-master/production/line/openweathermap/02d.svg');
+
+}
+
+
+.full_sun{
+    width: 120px;
+    height: 120px;
+}
+.full_sun:before {
+    content: url('img/weather-icons-master/production/line/openweathermap/01d.svg');
+}
+
+
+.rainy {
+    width: 120px;
+    height: 120px;
+}
+.rainy:before {
+    content: url('img/weather-icons-master/production/line/openweathermap/09d.svg');
+}
+
+
+.thunder {
+    width: 120px;
+    height: 120px;
+}
+.thunder:before {
+    content: url('img/weather-icons-master/production/line/openweathermap/11d.svg');
+}
+
+
+.full_clouds {
+    width: 120px;
+    height: 120px;
+}
+.full_clouds:before {
+    content: url('img/weather-icons-master/production/line/openweathermap/03d.svg');
+}
+
+.weather-widget {
+
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+
+
+}
+
+.weather-widget .location-name {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Стили для кнопки "pin" */
+.weather-widget .pin-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(0, 56, 112);
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.weather-widget .pin-button:hover {
+    background-color: rgb(31, 87, 142);
+}
+
+.weather-widget .current-weather {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.weather-widget .main-left, .weather-widget .main-right {
+    flex: 1;
+    text-align: center;
+}
+
+.weather-widget .prediction {
+    display: flex;
+    justify-content: space-between;
+}
+
+.weather-widget .day {
+    flex: 1;
+    text-align: center;
+}
+
+.weather-widget .day .name {
+    font-weight: bold;
+}
+
+.weather-widget .day i {
+    display: block;
+    margin: 10px 0;
+}
+
+
+.pin-button {
+    width: 70px;
+    height: 40px;
+
+}
+
+.pinned-data {
+    padding: 20px;
+    background-color: #00264D;
+    border-top: 2px solid #00264D;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    border-color: grey;
+
+}
+.pinned-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #00264D;
+
+}
+
+.pinned-item {
+    background-color: #F9F0DA;
+    background-image: url("img/sky4.jpg");
+    background-size: cover;
+    border-radius: 5px;
+    margin: 10px;
+    flex: 1 1 22%;
+    position: relative;
+    min-width: 250px;
+    max-width: 250px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.remove-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #1f578e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.remove-button:hover {
+    background-color: darkred;
+}
+h2 {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+
+
+.footer {
+    background-color: #00264D;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    border-color: grey;
+
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo img {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-nav ul li {
+    display: inline;
+}
+
+.footer-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-nav ul li a:hover {
+    color: #f49212;
+}
+
+.footer-contact {
+    margin: 20px 0;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.footer-social {
+    margin-top: 20px;
+}
+
+.footer-social .social-icon {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.footer-social .social-icon img {
+    width: 24px;
+    height: 24px;
+    transition: opacity 0.3s ease;
+}
+
+.footer-social .social-icon img:hover {
+    opacity: 0.7;
+}
+
+.footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+.degree-button {
+    top: 10px;
+    right: 10px;
+    background-color: rgb(0, 56, 112);
+    border: none;
+    color: #fff;
+    padding: 3px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
