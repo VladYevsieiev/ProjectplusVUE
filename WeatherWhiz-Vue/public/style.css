@@ -19,9 +19,7 @@ html, body {
 }
 
 
-.logo {
 
-}
 
 
 header {
@@ -33,7 +31,7 @@ header {
     padding-left: 25px;
     padding-right: 25px;
     background-color: #00264D;
-    margin-right: 650px;
+    /* margin-right: 650px; */
 }
 .items-center {
     align-items: center;
@@ -58,12 +56,30 @@ header {
     display: flex;
 }
 
+
+
 .nav_link {
     text-decoration: none;
     color: white;
     cursor: pointer;
 
 
+}
+
+.GoodDay {
+    top: 50px;
+    right: 50px;
+    background-color: darkgreen;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    width: 80px;
+    height: 50px;
+    margin-left: 30px;
 }
 
 .button-link {
@@ -99,7 +115,6 @@ form {
     position: relative;
     width: 300px;
     margin: 0 auto;
-    margin-right: 700px;
 }
 input, button {
     border: none;
@@ -123,10 +138,6 @@ button {
 
 .absolute-button { 
     position: absolute;
-}
-
-.degree button{
-
 }
 
 .weather-design {
@@ -505,4 +516,15 @@ h2 {
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-size: 16px;
+}
+
+#Weather{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search-input{
+    height: 150px;
+    
 }

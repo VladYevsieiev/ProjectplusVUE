@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <nav class="new-nav flex justify-between items-center">
+      
+        <div class="logo"><img src="/img/WeatherWhiz.png" /></div>
+        <div class="city-search">
+          <form>
+            <label>
+              <input
+                id="search-vue"
+                type="city"
+                name="city"
+                placeholder="Search city"
+              />
+            </label>
+      
+            <button class="absolute-button" type="submit">
+              <img src="img/search_icon.png" />
+            </button>
+          </form>
+        </div>
+<div id="Weather">
+</div>
+   
+
+    </nav>
+</header>
+
+<main>
+
+    <div class="background-container">
+        <h1></h1>
+        <div class="weather-widget">
+            <div class = "weather-design">
+
+                <div class = "location-name">
+                    <span id="location">New York, United States</span>
+                    <button class="pin-button absolute-button ">Pin</button>
+                    <div class="toggleTempUnit">
+                        <button id="celsius" class="degree-button">°C</button>
+                        <button id="fahrenheit" class="degree-button">°F</button>
+                    </div>
+                </div>
+                <div class = "current-weather">
+
+                    <div class="main_left">
+
+                        <i  id="current_icon" class="partly_cloudy"></i>
+                        <span id="current_main_descr">Partly Cloudy</span>
+
+                    </div>
+
+                    <div class="main_right">
+
+                        <span id = "current_wind_speed" class="wind">Wind: 6.1 kmph</span>
+                        <span id = "current_precip" class="precip">Precip: 0.00 mm</span>
+                        <span id = "current_pressure" class="pressure">Pressure: 1025.0 mb</span>
+                        <span id = "current_temperature" class="temperature">21.0 °c</span>
+
+                    </div>
+                </div>
+                <div class="prediction">
+                    <div class="day">
+                        <span class="name">MON</span>
+                        <i class="partly_cloudy"></i>
+                        <span class="temperature">21.0 °c</span>
+                    </div>
+
+                    <div class="day">
+                        <span class="name">TUE</span>
+                        <i class="full_sun"></i>
+                        <span class="temperature">23.3 °c</span>
+                    </div>
+
+                    <div class="day">
+                        <span class="name">WED</span>
+                        <i class=" rainy"></i>
+                        <span class="temperature">27.8 °c</span>
+                    </div>
+
+                    <div class="day">
+                        <span class="name">THU</span>
+                        <i class=" thunder"></i>
+                        <span class="temperature">31.3 °c</span>
+                    </div>
+
+                    <div class="day">
+                        <span class="name">FRI</span>
+                        <i class=" full_clouds"></i>
+                        <span class="temperature">17.0 °c</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pinned-data">
+        <h2>Pinned Locations:</h2>
+        <div class="pinned-container"></div>
+    </div>
+
+
+
+
+</main>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="img/WeatherWhiz.png" alt="Logo">
+        </div>
+        <div class="footer-nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <p>Contact us: <a href="vyevsieiev22@gmail.com">vyevsieiev22@gmail.com</a></p>
+            <p>&copy; 2024 WeatherWhiz. All rights reserved.</p>
+        </div>
+        <div class="footer-social">
+            <a href="#" class="social-icon">
+                <img src="img/facebook.png" alt="Facebook">
+            </a>
+            <a href="#" class="social-icon">
+                <img src="img/twitter.png" alt="Twitter">
+            </a>
+            <a href="#" class="social-icon">
+                <img src="img/inst.jpg" alt="Instagram">
+            </a>
+        </div>
+    </div>
+</footer>
+
+<!--HW задание 1 VUE-->
+<!--<script src="https://unpkg.com/vue@3/dist/vue.global.js"> </script>-->
+
+
+<script type="module" src="/src/script.js"></script>
+
+</body>
+
+</html>

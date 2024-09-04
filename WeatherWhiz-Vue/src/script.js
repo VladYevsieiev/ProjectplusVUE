@@ -1,51 +1,54 @@
+import { createApp } from 'vue'
+import App from './App.vue'
+
 function fetchWeatherData(city) {
   const apiKey = "f0472c034053bf2d36c5687dab2fdcd9";
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   fetch(url)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok " + response.statusText);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      let temperature = data.main.temp;
-      const weatherCondition = data.weather[0].main.toLowerCase();
-      const windSpeed = data.wind.speed;
-      const precipitation = data.weather[0].description;
-      const pressure = data.main.pressure;
-      const location = `${data.name}, ${data.sys.country}`;
-      const mainDescription = data.weather[0].description;
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok " + response.statusText);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        let temperature = data.main.temp;
+        const weatherCondition = data.weather[0].main.toLowerCase();
+        const windSpeed = data.wind.speed;
+        const precipitation = data.weather[0].description;
+        const pressure = data.main.pressure;
+        const location = `${data.name}, ${data.sys.country}`;
+        const mainDescription = data.weather[0].description;
 
-      if (getCookie("temperatureUnit") == "F") {
-        temperature = `${((temperature.toFixed(0) * 9) / 5 + 32).toFixed(0)} °F`;
-      } else {
-        temperature = `${temperature.toFixed(0)} °C`;
-      }
-      document.getElementById("current_temperature").innerText = temperature;
-      document.getElementById("current_wind_speed").innerText =
-        `Wind: ${windSpeed} kmph`;
-      document.getElementById("current_precip").innerText =
-        `Precip: ${precipitation}`;
-      document.getElementById("current_pressure").innerText =
-        `Pressure: ${pressure} mb`;
-      document.getElementById("location").innerText = location;
-      document.getElementById("current_main_descr").innerText = mainDescription;
+        if (getCookie("temperatureUnit") == "F") {
+          temperature = `${((temperature.toFixed(0) * 9) / 5 + 32).toFixed(0)} °F`;
+        } else {
+          temperature = `${temperature.toFixed(0)} °C`;
+        }
+        document.getElementById("current_temperature").innerText = temperature;
+        document.getElementById("current_wind_speed").innerText =
+            `Wind: ${windSpeed} kmph`;
+        document.getElementById("current_precip").innerText =
+            `Precip: ${precipitation}`;
+        document.getElementById("current_pressure").innerText =
+            `Pressure: ${pressure} mb`;
+        document.getElementById("location").innerText = location;
+        document.getElementById("current_main_descr").innerText = mainDescription;
 
-      const weatherIconMap = {
-        clear: "full_sun",
-        clouds: "partly_cloudy",
-        rain: "rainy",
-        thunderstorm: "thunder",
-        snow: "full_clouds",
-      };
-      const iconClass = weatherIconMap[weatherCondition] || "partly_cloudy";
-      document.getElementById("current_icon").className = iconClass;
-    })
-    .catch((error) => {
-      console.error("Error fetching weather data:", error);
-    });
+        const weatherIconMap = {
+          clear: "full_sun",
+          clouds: "partly_cloudy",
+          rain: "rainy",
+          thunderstorm: "thunder",
+          snow: "full_clouds",
+        };
+        const iconClass = weatherIconMap[weatherCondition] || "partly_cloudy";
+        document.getElementById("current_icon").className = iconClass;
+      })
+      .catch((error) => {
+        console.error("Error fetching weather data:", error);
+      });
 }
 
 function fetchWeatherForecast(city) {
@@ -53,53 +56,53 @@ function fetchWeatherForecast(city) {
   const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
 
   fetch(url)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok " + response.statusText);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      const forecastElements = document.querySelectorAll(".prediction .day");
-      const now = new Date();
-      const today = now.toISOString().split("T")[0];
-      const forecasts = data.list.filter((item) =>
-        item.dt_txt.includes("12:00:00"),
-      );
-
-      let dayIndex = 0;
-      for (const forecast of forecasts) {
-        const forecastDate = forecast.dt_txt.split(" ")[0];
-        if (forecastDate >= today && dayIndex < forecastElements.length) {
-          let temperature = forecast.main.temp;
-          const weatherCondition = forecast.weather[0].main.toLowerCase();
-          const weatherIconMap = {
-            clear: "full_sun",
-            clouds: "partly_cloudy",
-            rain: "rainy",
-            thunderstorm: "thunder",
-            snow: "full_clouds",
-          };
-          const iconClass = weatherIconMap[weatherCondition] || "partly_cloudy";
-          const dayElement = forecastElements[dayIndex];
-          if (getCookie("temperatureUnit") == "F") {
-            temperature = `${((temperature * 9) / 5 + 32).toFixed(0)} °F`;
-          } else {
-            temperature = `${temperature.toFixed(0)} °C`;
-          }
-          dayElement.querySelector(".temperature").innerText = temperature;
-          dayElement.querySelector("i").className = iconClass;
-          dayElement.querySelector(".name").innerText = new Date(
-            forecastDate,
-          ).toLocaleDateString("en-US", { weekday: "short" });
-          dayIndex++;
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok " + response.statusText);
         }
-        if (dayIndex >= forecastElements.length) break;
-      }
-    })
-    .catch((error) => {
-      console.error("Error fetching weather forecast:", error);
-    });
+        return response.json();
+      })
+      .then((data) => {
+        const forecastElements = document.querySelectorAll(".prediction .day");
+        const now = new Date();
+        const today = now.toISOString().split("T")[0];
+        const forecasts = data.list.filter((item) =>
+            item.dt_txt.includes("12:00:00"),
+        );
+
+        let dayIndex = 0;
+        for (const forecast of forecasts) {
+          const forecastDate = forecast.dt_txt.split(" ")[0];
+          if (forecastDate >= today && dayIndex < forecastElements.length) {
+            let temperature = forecast.main.temp;
+            const weatherCondition = forecast.weather[0].main.toLowerCase();
+            const weatherIconMap = {
+              clear: "full_sun",
+              clouds: "partly_cloudy",
+              rain: "rainy",
+              thunderstorm: "thunder",
+              snow: "full_clouds",
+            };
+            const iconClass = weatherIconMap[weatherCondition] || "partly_cloudy";
+            const dayElement = forecastElements[dayIndex];
+            if (getCookie("temperatureUnit") == "F") {
+              temperature = `${((temperature * 9) / 5 + 32).toFixed(0)} °F`;
+            } else {
+              temperature = `${temperature.toFixed(0)} °C`;
+            }
+            dayElement.querySelector(".temperature").innerText = temperature;
+            dayElement.querySelector("i").className = iconClass;
+            dayElement.querySelector(".name").innerText = new Date(
+                forecastDate,
+            ).toLocaleDateString("en-US", { weekday: "short" });
+            dayIndex++;
+          }
+          if (dayIndex >= forecastElements.length) break;
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching weather forecast:", error);
+      });
 }
 
 document.querySelector("form").addEventListener("submit", function (event) {
@@ -152,15 +155,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const iconClass = weatherIconElement.className.trim();
 
     if (
-      location &&
-      temperature &&
-      iconClass &&
-      !Array.from(pinnedContainer.children).some((item) =>
-        item.textContent.includes(location),
-      )
+        location &&
+        temperature &&
+        iconClass &&
+        !Array.from(pinnedContainer.children).some((item) =>
+            item.textContent.includes(location),
+        )
     ) {
       const pinnedLocations =
-        JSON.parse(localStorage.getItem(locationKey)) || [];
+          JSON.parse(localStorage.getItem(locationKey)) || [];
       pinnedLocations.push({ name: location, temperature, iconClass });
       localStorage.setItem(locationKey, JSON.stringify(pinnedLocations));
       addPinnedLocation({ name: location, temperature, iconClass });
@@ -191,7 +194,7 @@ function getCookie(name) {
 
 function initTemperatures() {
   const currentTemperatureElement = document.getElementById(
-    "current_temperature",
+      "current_temperature",
   );
 
   const currentTemperature = parseFloat(currentTemperatureElement.innerText);
@@ -214,7 +217,7 @@ function initTemperatures() {
 
 function updateTemperatures() {
   const currentTemperatureElement = document.getElementById(
-    "current_temperature",
+      "current_temperature",
   );
   const currentTemperature = parseFloat(currentTemperatureElement.innerText);
   currentTemperatureElement.innerText = formatTemperature(currentTemperature);
@@ -255,3 +258,11 @@ document.addEventListener("DOMContentLoaded", () => {
     setCookie("temperatureUnit", "C", 7);
   }
 });
+
+//// HW задание 2 VUE
+
+const app = createApp(App);
+app.mount('#Weather');
+
+
+createApp(App).mount('#Weather')

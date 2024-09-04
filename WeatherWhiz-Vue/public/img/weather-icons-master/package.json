@@ -4,7 +4,7 @@
 	"description": "A set of animated svg weather icons.",
 	"main": "index.js",
 	"scripts": {
-		"build": "node ."
+		"build": "node "
 	},
 	"devDependencies": {
 		"rimraf": "^3.0.2",
